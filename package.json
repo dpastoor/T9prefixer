@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dpastoor/T9prefixer#readme",
   "devDependencies": {
+    "lodash": "^3.10.1",
     "tape": "^4.2.2"
   }
 }

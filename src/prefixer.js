@@ -1,7 +1,30 @@
-var t9ToPrefixes = function(num) {
+var _ = require("lodash");
 
-  return numToPrefix(num);
-}
+var t9ToPrefixes = function(num) {
+    var numbers = [];
+    var output;
+    var sNumber = num.toString();
+
+  for (var i = 0, len = sNumber.length; i < len; i += 1) {
+      numbers.push(parseInt(sNumber.charAt(i)));
+  }
+
+  numbers.forEach(function(val) {
+      var letters = numToPrefix(val);
+      if (output === undefined) {
+          output = letters;
+      } else {
+        output = _.map(output, function(o) {
+          return _.map(letters, function(l) {
+            return o + l;
+          });
+        });
+        output = _.flatten(output);
+      }
+  });
+
+  return output;
+};
 
 var numToPrefix = function(n) {
   switch(n) {
@@ -28,3 +51,5 @@ var numToPrefix = function(n) {
 
 exports.t9ToPrefixes = t9ToPrefixes;
 //console.log(t9ToPrefixes(4));
+//console.log(t9ToPrefixes(45));
+console.log(t9ToPrefixes(23));
