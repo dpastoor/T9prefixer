@@ -18,9 +18,10 @@
   },
   "private": true,
   "dependencies": {
-    "material-ui": "^0.13.0",
+    "material-ui": "^0.13.3",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.1"
   },
   "devDependencies": {
     "babel-core": "^5.8.34",
