@@ -9,22 +9,30 @@ var DAWG = function(value){
 
   return newDAWG;
 }
+DAWG.prototype.contains = function(word){
+  var letters = letters === undefined ? [] : letters;
+  
+}
+
 
 DAWG.prototype.words = function(node, words, letters){
   var node = node === undefined ? this : node;
-  var letters = letters === undefined ? [] : words;
+  var letters = letters === undefined ? [] : letters;
   var words = words === undefined ? [] : words;
 
   // traverse tree, pushing node.value with node.end == true
   letters.push(node.value)
+    console.log(words, letters, node.value)
   if(node.ending === true){
       words.push(letters.join(''))
   }
-  for(var key in node.children){
+  if(node.children){
+      for(var key in node.children){
       DAWG.prototype.words(node.children[key], words, letters)
+    }
   }
-
-  return words
+  letters.pop()
+  return words;
 }
 DAWG.prototype.addArray = function(wordArray){
 
@@ -44,5 +52,5 @@ DAWG.prototype.addString = function(wordString){
     }
 
   }
-  currNode.ending = true
+  currNode.ending = true;
 }
