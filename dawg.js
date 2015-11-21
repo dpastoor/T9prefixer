@@ -69,3 +69,33 @@ DAWG.prototype.addString = function(wordString){
   currNode.ending = true;
 }
 
+//DAWG.prototype._condenseTree = function() {
+  // go through tree and find common suffixes
+  // combine suffixes by making children pointers point to common suffixes
+  // make array of common endings, "ing" etc.
+
+//}
+
+
+DAWG.prototype.lookAhead = function(str) {
+  //
+  var node = this;
+  var letters = str.split('');
+  for (var i = 0; i < letters.length; i++) {
+    if ( node.children[ letters[i] ] === undefined ) {
+      return [];
+    } else {
+      node = node.children[ letters[i] ];
+    }
+  }
+  return node.words();
+}
+  // 
+
+
+
+
+
+
+
+
