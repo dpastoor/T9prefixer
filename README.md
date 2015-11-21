@@ -1,5 +1,16 @@
 # T9prefixer
 
+T9-word style prediction engine advanced data structures sprint
+
+
+## Data lookup strategies
+
+Directed Acyclic Word Graph (DAWG) for dictionary lookups
+
+
+
+## running tests
+
 can set up the test runner by doing
 
 ```
