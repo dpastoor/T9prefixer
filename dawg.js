@@ -9,9 +9,19 @@ var DAWG = function(value){
 
   return newDAWG;
 }
+
 DAWG.prototype.contains = function(word){
-  var letters = letters === undefined ? [] : letters;
-  
+  var node = this;
+  var letters = word.split('');
+  for (var i = 0; i < letters.length; i++) {
+    if ( node.children[ letters[i] ] === undefined ) {
+      return false;
+    } else {
+      node = node.children[ letters[i] ];
+    }
+  }
+  // if all letters are defined in tree, then return true
+  return true;
 }
 
 
@@ -24,7 +34,7 @@ DAWG.prototype.words = function(node, words, letters){
   letters.push(node.value)
     console.log(words, letters, node.value)
   if(node.ending === true){
-      words.push(letters.join(''))
+      words.push( letters.join('') );
   }
   if(node.children){
       for(var key in node.children){
@@ -34,8 +44,11 @@ DAWG.prototype.words = function(node, words, letters){
   letters.pop()
   return words;
 }
-DAWG.prototype.addArray = function(wordArray){
 
+DAWG.prototype.addArray = function(wordArray){
+  for (var i = 0; i < wordArray.length; i++) {
+    this.addString( wordArray[i] );
+  }
 }
 
 DAWG.prototype.addString = function(wordString){
