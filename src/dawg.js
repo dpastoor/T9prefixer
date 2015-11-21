@@ -69,3 +69,4 @@ DAWG.prototype.addString = function(wordString){
   currNode.ending = true;
 }
 
+exports.DAWG = DAWG;
