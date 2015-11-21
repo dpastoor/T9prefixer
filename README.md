@@ -6,8 +6,14 @@ can set up the test runner by doing
 npm i --dev
 ```
 
+or install tape globally
+
+```
+npm i -g tape
+```
+
 and run tests via node using [tape](https://github.com/substack/tape)
 
 ```
-node <testfile.js>
+node <test/testfile.js>
 ```
