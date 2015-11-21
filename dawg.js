@@ -1,24 +1,33 @@
 // Directed Acyclic Word Graph for dictionary lookups in T9 advanced datastructures sprint
 
-var DAWG = function(){
+var DAWG = function(value){
   var newDAWG = Object.create(DAWG.prototype)
 
-  newDAWG.value;
+  newDAWG.value = value === undefined ? null : value;
   newDAWG.children = {};
   newDAWG.ending = false;
 
   return newDAWG;
 }
 
-newDAWG.prototype.words = function(node){
+DAWG.prototype.words = function(node){
   var words = [];
   // traverse tree, pushing node.value with node.end == true
   return words
 }
-newDAWG.prototype.addArray = function(wordArray){
+DAWG.prototype.addArray = function(wordArray){
 
 }
 
-newDAWG.prototype.addString = function(wordString){
+DAWG.prototype.addString = function(wordString){
+  var letters = wordString.split('')
+  var currNode = this
+  for(var i = 0; i < letters.length; i++){
+    if(this[children][letters[i]] === undefined){
+      this[children][letters[i]] = DAWG(letters[i])
+      currNode = this[children][letters[i]]
+    }
 
+  }
+  currNode.ending = true;
 }
