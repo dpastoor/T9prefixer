@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 const RaisedButton = require('material-ui/lib/raised-button');
-export default class Note extends React.Component {
+export default class Numpad extends React.Component {
   constructor(props) {
    super(props);
  }

@@ -1,6 +1,6 @@
 import React from 'react';
-import Note from './Note.jsx';
+import Numpad from './numPad.jsx';
 
 export default () => {
-  return <Note />;
+  return <Numpad />;
 };
