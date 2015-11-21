@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "t9 prefixer",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dpastoor/T9prefixer.git"
@@ -16,8 +13,21 @@
     "url": "https://github.com/dpastoor/T9prefixer/issues"
   },
   "homepage": "https://github.com/dpastoor/T9prefixer#readme",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "private": true,
+  "dependencies": {
+    "material-ui": "^0.13.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
   "devDependencies": {
+    "html-webpack-plugin": "^1.6.2",
     "lodash": "^3.10.1",
-    "tape": "^4.2.2"
+    "tape": "^4.2.2",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-merge": "^0.3.0"
   }
 }
