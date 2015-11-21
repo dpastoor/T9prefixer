@@ -45,11 +45,11 @@ var numToPrefix = function(n) {
   case 9:
     return ['w', 'x', 'y', 'z'];
   default:
-    return undefined
+    return undefined;
   }
 };
 
 exports.t9ToPrefixes = t9ToPrefixes;
 //console.log(t9ToPrefixes(4));
 //console.log(t9ToPrefixes(45));
-console.log(t9ToPrefixes(23));
+//console.log(t9ToPrefixes(23456));
