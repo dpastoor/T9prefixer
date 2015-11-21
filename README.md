@@ -7,17 +7,20 @@ T9-word style prediction engine advanced data structures sprint
 
 Directed Acyclic Word Graph (DAWG) for dictionary lookups
 
+## UI
 
-
-## running tests
-
-can set up the test runner by doing
+run in development mode using webpack + hot reloading
 
 ```
 npm i --dev
+npm start
 ```
 
-or install tape globally
+then navigate to `localhost:8080`
+
+## running tests
+
+install tape globally
 
 ```
 npm i -g tape
