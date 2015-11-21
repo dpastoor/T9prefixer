@@ -2,14 +2,14 @@
 
 
 var DAWG = function(value){
-  var newDAWG = Object.create(DAWG.prototype)
+  var newDAWG = Object.create(DAWG.prototype);
 
   newDAWG.value = value === undefined ? null : value;
   newDAWG.children = {};
   newDAWG.ending = false;
 
   return newDAWG;
-}
+};
 
 DAWG.prototype.contains = function(word){
   var node = this;
@@ -32,37 +32,36 @@ DAWG.prototype.words = function(node, words, letters){
   var words = words === undefined ? [] : words;
 
   // traverse tree, pushing node.value with node.end == true
-  letters.push(node.value)
-    console.log(words, letters, node.value)
+  letters.push(node.value);
+
   if(node.ending === true){
       words.push( letters.join('') );
   }
   if(node.children){
       for(var key in node.children){
-      DAWG.prototype.words(node.children[key], words, letters)
+      DAWG.prototype.words(node.children[key], words, letters);
     }
   }
-  letters.pop()
+  letters.pop();
   return words;
 }
 
 DAWG.prototype.addArray = function(wordArray){
   for (var i = 0; i < wordArray.length; i++) {
-    this.addString( wordArray[i] );
+    this.addString(wordArray[i]);
   }
 }
 
 DAWG.prototype.addString = function(wordString){
-  var letters = wordString.toLowerCase().split('')
-  var currNode = this
+  var letters = wordString.toLowerCase().split('');
+  var currNode = this;
 
   for(var i = 0; i < letters.length; i++){
-    if(currNode.children[letters[i]] === undefined){
-      currNode.children[letters[i]] = DAWG(letters[i])
-      currNode = currNode.children[letters[i]]
-    }
-    else{
-        currNode = currNode.children[letters[i]]
+    if (currNode.children[letters[i]] === undefined) {
+      currNode.children[letters[i]] = DAWG(letters[i]);
+      currNode = currNode.children[letters[i]];
+    } else {
+        currNode = currNode.children[letters[i]];
     }
 
   }
