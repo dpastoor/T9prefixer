@@ -23,7 +23,7 @@ export default class App extends React.Component{
     <div>
       <Screen numbers={this.state.numbers} />
       <Numpad updateGlobalNum={this._updateGlobalNum.bind(this)} />
-      <Screen numbers={this.state.prefixes} />
+      <Screen numbers={Array.prototype.join.call(this.state.prefixes)} />
     </div>
   )
   }
