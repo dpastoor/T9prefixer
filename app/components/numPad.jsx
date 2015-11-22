@@ -11,6 +11,9 @@ export default class Numpad extends React.Component {
 // componentDidMount() {
 //   this.state.loading = false;
 // }
+_handleClick() {
+  console.log("clicked: ");
+}
  render() {
   // if (this.state.loading) {
   //   return <spinner />
@@ -43,12 +46,12 @@ export default class Numpad extends React.Component {
      [9, "WXYZ"]
    ]], function(row) {
      var rowButtons = _.map(row, function(x) {
-       return <li><RaisedButton label={x[0] + ':' + x[1]}
+       return <li key={x[0]} ><RaisedButton label={x[0] + ':' + x[1]}
          secondary={true}/></li>;
      });
 
      return (
-       <div style={divSpacing}>
+       <div style={divSpacing} >
           <ul style={listStyles}>
              {rowButtons}
           </ul>

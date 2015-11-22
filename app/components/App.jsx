@@ -3,10 +3,16 @@ import Numpad from './numPad.jsx';
 import Screen from './screen.jsx';
 
 export default class App extends React.Component{
+  constructor(props) {
+   super(props);
+   this.state = {numbers: ""}
+ }
+ // refs.
+
   render() {
     return (
     <div>
-      <Screen numbers={2}/>
+      <Screen numbers={this.state.numbers} />
       <Numpad />
     </div>
   )
