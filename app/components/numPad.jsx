@@ -11,8 +11,8 @@ export default class Numpad extends React.Component {
 // componentDidMount() {
 //   this.state.loading = false;
 // }
-_handleClick() {
-  console.log("clicked: ");
+_handleClick(num) {
+  console.log("clicked", num);
 }
  render() {
   // if (this.state.loading) {
@@ -44,9 +44,11 @@ _handleClick() {
      [7, "PQRS"],
      [8, "TUV"],
      [9, "WXYZ"]
-   ]], function(row) {
-     var rowButtons = _.map(row, function(x) {
-       return <li key={x[0]} ><RaisedButton label={x[0] + ':' + x[1]}
+   ]], (row) => {
+     var rowButtons = _.map(row, (x) => {
+       let num = x[0];
+       let letters = x[1];
+       return <li key={num} onClick = {this._handleClick.bind(this, num)} ><RaisedButton label={num + ':' + letters}
          secondary={true}/></li>;
      });
 
