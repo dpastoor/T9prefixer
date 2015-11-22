@@ -1,7 +1,6 @@
 import React from 'react';
 import Numpad from './numPad.jsx';
 import Screen from './screen.jsx';
-import { connect } from 'react-redux'
 
 export default class App extends React.Component{
   constructor(props) {
@@ -9,12 +8,14 @@ export default class App extends React.Component{
    this.state = {numbers: ""}
  }
  // refs.
-
+ _updateGlobalNum(n) {
+   this.setState({numbers: n})
+ }
   render() {
     return (
     <div>
       <Screen numbers={this.state.numbers} />
-      <Numpad />
+      <Numpad updateGlobalNum={this._updateGlobalNum.bind(this)} />
     </div>
   )
   }

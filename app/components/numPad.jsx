@@ -12,7 +12,7 @@ export default class Numpad extends React.Component {
 //   this.state.loading = false;
 // }
 _handleClick(num) {
-  console.log("clicked", num);
+  this.props.updateGlobalNum(num);
 }
  render() {
   // if (this.state.loading) {
